@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://c338007qvbc26"]
+
+[ext_resource type="Script" uid="uid://c5tnfyxuijbof" path="res://jucator.gd" id="1_vcvuf"]
+[ext_resource type="Texture2D" uid="uid://cxgpubw6456ef" path="res://New Piskel (3).png" id="2_gdy83"]
+[ext_resource type="Script" uid="uid://dy00d11px5d3e" path="res://minge.gd" id="2_ncd8m"]
+[ext_resource type="AudioStream" uid="uid://bs8mvps6johuc" path="res://Jump.wav" id="3_x8p1d"]
+[ext_resource type="Texture2D" uid="uid://bp8g5vx2vlbsj" path="res://New Piskel (5).png" id="4_bn2ci"]
+[ext_resource type="Texture2D" uid="uid://d0nx8xwp7mnsm" path="res://New Piskel (6).png" id="5_0o1sf"]
+[ext_resource type="AudioStream" uid="uid://ddcbtlpuhsu2u" path="res://BoneSnap.wav" id="5_xycfj"]
+[ext_resource type="AudioStream" uid="uid://b8wxmcffvuslo" path="res://FastProjectile.wav" id="6_0st08"]
+[ext_resource type="Script" uid="uid://b27rsveg18rce" path="res://boss.gd" id="6_js8yg"]
+[ext_resource type="Texture2D" uid="uid://gv1kqvmhh4tp" path="res://New Piskel (7).png" id="7_x1pvp"]
+[ext_resource type="AudioStream" uid="uid://cajsb224kl8la" path="res://Pickup1.wav" id="8_tiwlb"]
+[ext_resource type="AudioStream" uid="uid://bfeeou38ywydy" path="res://CaveBeast.wav" id="10_48sff"]
+[ext_resource type="AudioStream" uid="uid://fqmxh75xpyo5" path="res://victory_6.mp3" id="13_7uy27"]
+[ext_resource type="AudioStream" uid="uid://cs6gsw7m6de2q" path="res://freesound_community-boss-intro-02-72039.mp3" id="13_nld0r"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q7tio"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7tio"]
+size = Vector2(1329, 6.6015625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5utf"]
+size = Vector2(60, 140)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vcvuf"]
+friction = 0.0
+bounce = 0.7
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q7tio"]
+radius = 12.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1v4e"]
+size = Vector2(100, 100)
+
+[node name="Joc" type="Node2D" unique_id=1884887132]
+position = Vector2(0, 1)
+
+[node name="Podea" type="StaticBody2D" parent="." unique_id=75327693]
+position = Vector2(576, 635)
+physics_material_override = SubResource("PhysicsMaterial_q7tio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Podea" unique_id=334461302]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_q7tio")
+
+[node name="ColorRect" type="ColorRect" parent="Podea" unique_id=1526309963]
+offset_left = -819.0
+offset_top = 1973.0
+offset_right = -779.0
+offset_bottom = 2013.0
+
+[node name="Podea2" type="StaticBody2D" parent="." unique_id=629657041]
+position = Vector2(576, 15)
+physics_material_override = SubResource("PhysicsMaterial_q7tio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Podea2" unique_id=1611574674]
+position = Vector2(-2, -8)
+shape = SubResource("RectangleShape2D_q7tio")
+
+[node name="ColorRect" type="ColorRect" parent="Podea2" unique_id=1669006889]
+offset_left = -819.0
+offset_top = 1973.0
+offset_right = -779.0
+offset_bottom = 2013.0
+
+[node name="Podea3" type="StaticBody2D" parent="." unique_id=898495051]
+position = Vector2(15, 324)
+rotation = 1.5707964
+physics_material_override = SubResource("PhysicsMaterial_q7tio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Podea3" unique_id=880764]
+position = Vector2(4.808253e-07, 11)
+shape = SubResource("RectangleShape2D_q7tio")
+
+[node name="ColorRect" type="ColorRect" parent="Podea3" unique_id=427757381]
+offset_left = -819.0
+offset_top = 1973.0
+offset_right = -779.0
+offset_bottom = 2013.0
+
+[node name="Podea4" type="StaticBody2D" parent="." unique_id=795158871]
+position = Vector2(1137, 324)
+rotation = 1.5707964
+physics_material_override = SubResource("PhysicsMaterial_q7tio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Podea4" unique_id=1283500587]
+position = Vector2(1.9999995, -11)
+shape = SubResource("RectangleShape2D_q7tio")
+
+[node name="ColorRect" type="ColorRect" parent="Podea4" unique_id=117575213]
+offset_left = -819.0
+offset_top = 1973.0
+offset_right = -779.0
+offset_bottom = 2013.0
+
+[node name="Jucator" type="CharacterBody2D" parent="." unique_id=1624228270]
+position = Vector2(576, 580)
+script = ExtResource("1_vcvuf")
+
+[node name="ColorRect" type="Sprite2D" parent="Jucator" unique_id=1354815432]
+texture = ExtResource("2_gdy83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jucator" unique_id=127334293]
+shape = SubResource("RectangleShape2D_n5utf")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Jucator" unique_id=365203519]
+stream = ExtResource("3_x8p1d")
+
+[node name="Minge" type="RigidBody2D" parent="." unique_id=1193932944]
+physics_material_override = SubResource("PhysicsMaterial_vcvuf")
+gravity_scale = 0.6
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("2_ncd8m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Minge" unique_id=279504594]
+shape = SubResource("CircleShape2D_q7tio")
+
+[node name="ColorRect" type="Sprite2D" parent="Minge" unique_id=638158167]
+texture = ExtResource("4_bn2ci")
+
+[node name="SunetRicoseu" type="AudioStreamPlayer2D" parent="Minge" unique_id=306253706]
+stream = ExtResource("5_xycfj")
+
+[node name="SunetAruncare" type="AudioStreamPlayer2D" parent="Minge" unique_id=1228265613]
+stream = ExtResource("6_0st08")
+
+[node name="PickUp" type="AudioStreamPlayer2D" parent="Minge" unique_id=2493530]
+stream = ExtResource("8_tiwlb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1432221463]
+z_index = -21
+position = Vector2(574, 325)
+texture = ExtResource("5_0o1sf")
+
+[node name="Boss" type="StaticBody2D" parent="." unique_id=1255793049]
+position = Vector2(900, 250)
+script = ExtResource("6_js8yg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss" unique_id=2087234593]
+shape = SubResource("RectangleShape2D_d1v4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boss" unique_id=160800812]
+texture = ExtResource("7_x1pvp")
+
+[node name="Auuu" type="AudioStreamPlayer2D" parent="Boss" unique_id=1057125908]
+stream = ExtResource("10_48sff")
+volume_db = 10.0
+
+[node name="Victory" type="AudioStreamPlayer2D" parent="Boss" unique_id=1720299193]
+stream = ExtResource("13_7uy27")
+volume_db = 24.0
+
+[node name="ZonaAtac" type="Area2D" parent="." unique_id=1259889647]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaAtac" unique_id=1264506849]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=998582693]
+stream = ExtResource("13_nld0r")
+volume_db = 4.0
+autoplay = true
